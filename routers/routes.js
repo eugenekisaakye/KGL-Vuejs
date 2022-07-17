@@ -9,6 +9,13 @@ router.post('/signup',(request,response) =>{
         position:request.body,position,
         password:request.body,password,
     })
+    signedUpUser.save()
+    .then(data =>{
+        response.json(data)
+    })
+    .catch(error =>{
+        
+    })
 })
 
 
