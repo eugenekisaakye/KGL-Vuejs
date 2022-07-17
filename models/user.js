@@ -13,7 +13,7 @@ const userTemplate = new mongoose.Schema({
         type:string,
         required:true,
     },
-    pasword:{
+    password:{
         type:string,
         required:true,
     }
