@@ -8,6 +8,7 @@ const userTemplate = new mongoose.Schema({
     email:{
         type:string,
         required:true,
+        unique:true,
     },
     position:{
         type:string,
