@@ -14,7 +14,7 @@ router.post('/signup',(request,response) =>{
         response.json(data)
     })
     .catch(error =>{
-        
+        response.json(error)
     })
 })
 
