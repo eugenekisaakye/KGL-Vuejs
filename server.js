@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 
 //Configuring middle-ware
-server.use(expressSession)
+app.use(expressSession)
 
 //Mongodb connection
 mongoose.connect("mongodb://localhost:27017/KGL-DB", () => {
