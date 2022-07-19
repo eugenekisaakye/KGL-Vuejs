@@ -2,24 +2,23 @@ const express = require("express");
 const app = express();
 const port = 9000;
 const mongoose = require("mongoose");
-const expressSession = require('express-session')({
-  secret: 'secret',
+const expressSession = require("express-session")({
+  secret: "secret",
   resave: false,
   saveUninitialized: false,
 });
+const cors = require("cors");
 
 // main().catch((err) => console.log(err));
 // async function main() {
 //   await mongoose.connect("mongodb://localhost:27017/test");
 // }
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 
 //Configuring middle-ware
-app.use(expressSession)
+app.use(expressSession);
+app.use(cors);
 
 //Mongodb connection
 mongoose.connect("mongodb://localhost:27017/KGL-DB", () => {

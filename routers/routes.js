@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const userTemplatecopy = require('../models/user')
 
+
+app.get("/", (req, res) => {
+    res.send('/KGL/html/index.html');
+  });
+
 router.post('/signup',(request,response) =>{
     const signedUpUser = new userTemplatecopy({
         fullName:request.body,fullName,
