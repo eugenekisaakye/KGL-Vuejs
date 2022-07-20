@@ -15,10 +15,16 @@ const cors = require("cors");
 // }
 
 
-
 //Configuring middle-ware
 app.use(expressSession);
 app.use(cors);
+app.use(express.static('html'))
+
+
+app.get("/", (req, res) => {
+  res.send()
+});
+
 
 //Mongodb connection
 mongoose.connect("mongodb://localhost:27017/KGL-DB", () => {
