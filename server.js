@@ -9,20 +9,24 @@ const expressSession = require("express-session")({
 });
 const cors = require("cors");
 
-// main().catch((err) => console.log(err));
-// async function main() {
-//   await mongoose.connect("mongodb://localhost:27017/test");
-// }
-
 
 //Configuring middle-ware
 app.use(expressSession);
-app.use(cors);
-app.use(express.static('html'))
+// app.use(cors);
+app.use(express.static('html'));
 
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, '/index.html'));
+// });
+
+
+app.get('/', function(req,res) {
+  res.send('/html/index.html')
+});
+
+app.get('/signup', function(req,res) {
+  res.send('/html/signUp.html')
 });
 
 
@@ -31,6 +35,10 @@ mongoose.connect("mongodb://localhost:27017/KGL-DB", () => {
   console.log("Connected to database!");
 });
 
+;
+
+
 app.listen(port, () => {
   console.log(`Server active on port ${port}`);
 });
+
