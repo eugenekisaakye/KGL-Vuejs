@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const path = require('path')
+const router = express.Router();
 const port = 9000;
 const mongoose = require("mongoose");
 const expressSession = require("express-session")({
@@ -21,12 +23,12 @@ app.use(express.static('html'));
 // });
 
 
-app.get('/', function(req,res) {
+router.get('/', function(req,res) {
   res.send('/html/index.html')
 });
 
-app.get('/signup', function(req,res) {
-  res.send('/html/signUp.html')
+router.get('/html/signUp.html ', function(req,res) {
+  res.send(__dirname + '/html/signUp.html')
 });
 
 
