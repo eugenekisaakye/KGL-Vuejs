@@ -12,6 +12,7 @@ const expressSession = require("express-session")({
 const cors = require("cors");
 
 
+
 //Configuring middle-ware
 app.use(expressSession);
 // app.use(cors);
@@ -24,12 +25,13 @@ app.use(express.static('html'));
 
 
 router.get('/', function(req,res) {
-  res.send('/html/index.html')
+  res.render('/views/index.pug')
 });
 
-router.get('/html/signUp.html ', function(req,res) {
-  res.send(__dirname + '/html/signUp.html')
+router.get('/views/signUp.pug', function(req,res) {
+  res.render('/')
 });
+
 
 
 //Mongodb connection
